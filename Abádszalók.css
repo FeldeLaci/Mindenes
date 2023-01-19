@@ -1,0 +1,43 @@
+#tartalom {
+    width: 50%;
+    height: 700px;
+    border: 2px dotted red;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}    
+#fejlec {
+  
+    width: 90%;
+    border: 3px rgb(0, 255, 115);
+    margin: auto;
+}
+
+.oszlopjobb {
+    width: 40%;
+    border: 2px: blue;
+    height: 200px;
+   
+}    
+.oszlopbal {
+    width: 40%;
+    border: 2px: blue;
+    height: 200px;
+}
+.oszlop {
+   float: left;
+}
+.oszlop {
+   float: left;
+}
+    .kozepre {
+    border: 1px solid green;
+    width: 97%;
+    height: 450px;
+    margin: auto;
+}
+
+#lablec {
+    width: 97%;
+    border: 1px solid orange;
+}

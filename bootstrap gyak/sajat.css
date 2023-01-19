@@ -1,0 +1,22 @@
+.rozsaszin {
+    background-color: darksalmon;
+}
+.magenta {
+    background-color: magenta;
+}
+.vilagoskek {
+    background-color: cyan;
+}
+.zold {
+    background-color: green;
+}
+.narancs {
+    background-color: orange;
+}
+.contentheight {
+    height: 30em;
+    border: 1px solid black;
+}
+.border-black{
+    border: 2px solid black;
+}

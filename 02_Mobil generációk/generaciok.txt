@@ -1,0 +1,18 @@
+- Mobiltelefon Genrációk -
+
+0G – Nulladik generáció
+1945-ben született meg az elsõ mobil rádiótelefonok. A rádiótelefonok gyakorlatilag Push to Talk elven mûködtek, mint az adó-vevõk. Méretüket és tömegüket nézve igen csak nagyok voltak a készülékek. Ezért inkább jármûvekbe szerelve használták, a mobilitásuk kihasználása miatt.
+
+1G – Elsõ generáció
+Az 1970-es évek elején az Amerikai Egyesült Államokban lévõ Bell Laboratóriumban  született meg a celluláris alapú mobil rádiós rendszer ötlete, mely már lehetõvé tette, hogy a felhasználó a telefonos beszélgetés közben akár már több cellán is áthaladjon a kapcsolat megszakadása nélkül. Az elsõ kézi mobiltelefon feltalálójának Martin Coopert tartják, a Motorola egykori mérnökét.
+
+2G – Második generáció
+Az igazi áttörést a 2. generációs (2G) hálózatok megjelenése jelentette, ugyanis ekkor vezették be a digitális technológiát a jelátvitelre. A technológia segítségével már több csatornát lehetett igénybe venni, mint az azonos sávszélességgel rendelkezõ analóg rendszerekben, mivel a digitálisan kódolt jel jól tömöríthetõ. Ennek köszönhetõen a digitális rendszerek nagyobb hatékonysággal, jobb hangátviteli minõséggel bírtak, mint az analóg hálózatok, mindemellett biztonságosabbá is váltak. A legelterjedtebb 2. generációs hálózat a GSM (Global System for Mobil Communication), mely legelsõnek Finnországban került kiépítésre 1991-ben.
+
+3G – Harmadik generáció
+2003. júniusában egy új mérföldkövéhez érkezett a mobil kommunikáció világa, mikor a  Hutchison Telecommunications (Hong Kong) elindította harmadik generációs hálózatát. A 3. generációs (3G) hálózatok immár 2 GHz-es frekvencián és más kódolási eljárást használva mûködnek, mint a korábbi 2G-s rendszerek. Nagysebességû adatátvitelre és új multimédiás szolgáltatások (pl.: video telefonálás, videó konferencia, e-mail, …stb.) igénybevételéhet tervezték a 2G hálózatok igénybevétele mellett.
+
+4G – Negyedik generáció
+2009. december 14-én elérkezett a pillanat, mikor a mobil telekommunikációban új generációváltás veszi kezdetét. Ezen a napon a TeliaSonera Oslóban és Stockholmban a világon elsõként indított el nyilvános LTE (Long Term Evolution) szolgáltatást, mely akár már HD multimédiás tartalmak megosztását is lehetõvé tették a hálózaton keresztül. A szédületes sebességgel bíró LTE szolgáltatás, ami akár 100 Mbit/s-ot is képes elérni az adatátvitel során 2011-ig csak USB modemmel volt igénybe vehetõ, mivel a legelsõ LTE képes telefon – mely a HTC ThunderBolt volt - csupán csak ekkor jelent meg. Mivel az LTE kizárólag IP technológián alapul, ezért megoldást kellett találni, hogy a mobil hívások átjárhatóak legyenek a PSTN hálózattal.
+2011. februárjában a Huawei Technologies a barcelonai Mobile Word Congressen már az LTE-nél is nagyobb adatátvitelt lehetõvé tevõ fejlesztéseit mutatta be. Ez az LTE Advanced, melynek maximális elméleti adatátviteli sebessége egyesek szerint elérheti az 1Gbit/s-ot határt (egyenlõre a technológiával 225 Mbit/s-os sebességet értek el).
+Magyarországon LTE szolgáltatás elsõként 2012. január 1-tõl érhetõ el a T-Mobile kínálatában. Oroszországban 2012. októberétõl viszont már LTE Advanced szolgáltatásokra képes hálózatot alakított ki YOTA Networks Moszka egyes részein.

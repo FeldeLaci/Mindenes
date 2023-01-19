@@ -1,0 +1,1658 @@
+{
+	"name": "HTML feladat - Ingatlanok",
+	"teacher": "Bognár Pál",
+	"class": "10A",
+	"date": "2022.03.18",
+	"steps": [
+		{
+			"id": "1",
+			"description": "Mindkét oldal nyelve magyar és a weboldal kódolása UTF-8",
+			"points": 1,
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//html"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "hu",
+						"actual": {
+							"attribute": "lang"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//head/meta[@charset]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "utf-8",
+						"actual": {
+							"attribute": "charset"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//html"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "hu",
+						"actual": {
+							"attribute": "lang"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//head/meta[@charset]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "utf-8",
+						"actual": {
+							"attribute": "charset"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "2",
+			"description": "A címsor \"Ingatlanpiac\" legalább egyik oldalon",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//head/title"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Ingatlanpiac",
+						"actual": {
+							"attribute": "innerHTML"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//head/title"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Ingatlanpiac",
+						"actual": {
+							"attribute": "innerHTML"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "3/a",
+			"description": "Mindkét css-t importálta legalább az egyik HTML-be",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][1][contains(@href, 'bootstrap.css')]"
+					},
+					"assert": {
+						"operation": "count",
+						"expected": "2"
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][contains(@href, 'style.css') or contains(@href, 'bootstrap.min.css')]"
+					},
+					"assert": {
+						"operation": "count",
+						"expected": "2"
+					}
+				}
+			]
+		},
+		{
+			"id": "3/b",
+			"description": "Mindkét állományban helyes a CSS-ek importálásnak soirrendje",
+			"points": 1,
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "href"
+						},
+						"values": [
+							"bootstrap.min.css"
+						]
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][2]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "href"
+						},
+						"values": [
+							"style.css"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "href"
+						},
+						"values": [
+							"bootstrap.min.css"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//head/link[@rel='stylesheet'][2]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "href"
+						},
+						"values": [
+							"style.css"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "4",
+			"description": "Mindkét oldalon megcsinálta a címsor átalakítását",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//header/h1"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Ingatlanpiac",
+						"actual": {
+							"text": ""
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//header/h1"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Eladó családi ház - #13698565",
+						"actual": {
+							"text": ""
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "5/a",
+			"description": "Header.jpg-t a megfelelő helyre beszúrta",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//header/*[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "img",
+						"actual": {
+							"tagName": ""
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//header/*[2]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "src"
+						},
+						"values": [
+							"kepek/header.jpg"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "5/b",
+			"description": "A header.jpg helyettesítő szövege és címe helyes",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'header.jpg')]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Ingatlanpiac",
+						"actual": {
+							"attribute": "alt"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'header.jpg')]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Ingatlanpiac",
+						"actual": {
+							"attribute": "title"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "6",
+			"description": "Stíluslapon a header img selectorra beállította a width: 100%-ot",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//header/img"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//header/img"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "1000px",
+						"actual": {
+							"cssValue": "width"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "7/a",
+			"description": "A \"Lakások\" menüpont a megfelelő helyen létezik",
+			"points": 1,
+
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "li",
+						"actual": {
+							"tagName": ""
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "nav-item",
+						"actual": {
+							"attribute": "class"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "a",
+						"actual": {
+							"tagName": ""
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Lakások",
+						"actual": {
+							"attribute": "innerHTML"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "7/b",
+			"description": "A menüpont osztályai és hivatkozása helyes",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]/a"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"nav-link",
+							"btn",
+							"btn-outline-light"
+						]
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//nav/ul/*[2]/a"
+					},
+					"assert": {
+						"operation": "contains",
+						"values": [
+							"#lakas"
+						],
+						"actual": {
+							"attribute": "href"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "8/a",
+			"description": "Stíluslapon a h2 kiskapitális",
+			"points": 1,
+			"conditionsNumberHaveToPass": "2",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},				
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "small-caps",
+						"actual": {
+							"cssValue": "font-variant"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "8/b",
+			"description": "Stíluslapon a h2 szegélyezése jó",
+			"points": 1,
+			"conditionsNumberHaveToPass": "9",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "solid",
+						"actual": {
+							"cssValue": "border-bottom-style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "solid",
+						"actual": {
+							"cssValue": "border-left-style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "none",
+						"actual": {
+							"cssValue": "border-top-style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "none",
+						"actual": {
+							"cssValue": "border-right-style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "5px",
+						"actual": {
+							"cssValue": "border-bottom-width"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "5px",
+						"actual": {
+							"cssValue": "border-left-width"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-bottom-color"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-left-color"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "8/c",
+			"description": "Stíluslapon a h2-ra jól állíotta be a border-radius-t",
+			"points": 1,
+			"conditionsNumberHaveToPass": "5",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "15px",
+						"actual": {
+							"cssValue": "border-bottom-left-radius"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "0px",
+						"actual": {
+							"cssValue": "border-bottom-right-radius"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "0px",
+						"actual": {
+							"cssValue": "border-top-left-radius"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//h2[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "0px",
+						"actual": {
+							"cssValue": "border-top-right-radius"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "9",
+			"description": "Index-html-en a befoglaló kereteknél beállította a col-md-6 és col-lg-4 class-okat",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class,'row')]/div[contains(@class, 'col-md-6') and contains(@class, 'col-lg-4')]"
+					},
+					"assert": {
+						"operation": "count",
+						"greaterThen": "7"
+					}
+				}
+			]
+		},
+		{
+			"id": "10/a",
+			"description": "Index.html-en legalább 3 esetben beállította a felső indexet",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//p[contains(text(), ' m')]/sup[text()='2']"
+					},
+					"assert": {
+						"operation": "count",
+						"greaterThen": "3"
+					}
+				}
+			]
+		},
+		{
+			"id": "10/b",
+			"description": "Index.html-en legalább 10 esetben beállította a felső indexet",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//p[contains(text(), ' m')]/sup[text()='2']"
+					},
+					"assert": {
+						"operation": "count",
+						"greaterThen": "10"
+					}
+				}
+			]
+		},
+		{
+			"id": "11/a",
+			"description": "Index.html-en beállította a hivatkozást a haz01.html-re",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[text()='Bővebben']"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "href"
+						},
+						"values": [
+							"haz01.html"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "11/b",
+			"description": "A haz01.html-re a hivatkozás azonoson lapon nyílik meg",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[text()='Bővebben']"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "",
+						"actual": {
+							"attribute": "target"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[text()='Bővebben']"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "target"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "12/a",
+			"description": "Láblécben létezik hivatkozás a megadott linkre",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",			
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a[contains(@href, 'www.jedlik.eu')]"
+					},
+					"assert": {
+						"operation": "count",
+						"expected": "1"
+					}
+				}
+			]
+		},
+		{
+			"id": "12/b",
+			"description": "A hivatkozás szövege \"Jedlik 2021\"",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "Jedlik 2021",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "12/c",
+			"description": "A hivatkozás minden esetben új oldalon jelenik meg",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "_blank",
+						"actual": {
+							"attribute": "target"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "12/d-1",
+			"description": "Helyes a stílusbeállítás a hivatkozásra",
+			"points": 1,
+			"conditionsNumberHaveToPass": "3",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "700",
+						"actual": {
+							"cssValue": "font-weight"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(255, 255, 255, 1)",
+						"actual": {
+							"cssValue": "color"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "12/d-2",
+			"description": "Helyes a stílusbeállítás a hivatkozásra hover esetében",
+			"points": 1,
+			"conditionsNumberHaveToPass": "3",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a",
+						"actionsBefore": [
+							{
+								"action": "moveToElement"
+							}
+						]
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "none solid rgb(255, 0, 0)",
+						"actual": {
+							"cssValue": "text-decoration"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a",
+						"actionsBefore": [
+							{
+								"action": "moveToElement"
+							}
+						]
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(255, 0, 0, 1)",
+						"actual": {
+							"cssValue": "color"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//div[contains(@class, 'lablec')]/a"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "13",
+			"description": "A haz01.html oldalon az oszlopok aránya megegyezik",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//div[contains(@class,'row')]/div[contains(@class, 'col-lg-6') or contains(@class, 'col-md-6')]"
+					},
+					"assert": {
+						"operation": "count",
+						"expected": "2"
+					}
+				}
+			]
+		},
+		{
+			"id": "14",
+			"description": "A haz01.html oldalon a képek balra úsztatottak",
+			"points": 1,
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'haz01_1.jpg')]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"float-left"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'haz01_2.jpg')]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"float-left"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'haz01_3.jpg')]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"float-left"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//img[contains(@src, 'haz01_4.jpg')]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"float-left"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "15",
+			"description": "Legalább három kép esetében beállította a float-left osztályt",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//p[contains(text(), 'ingyenes')]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"font-italic"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "16/a",
+			"description": "A táblázatot megfelelő módon létrehozta",
+			"points": 1,
+			"conditionsNumberHaveToPass": "11",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[1]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Ár"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[1]/td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "115000000 Ft",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[2]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Alapterület"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[2]/td[2]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"152 m"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[3]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Szobák száma"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[3]/td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "5",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[4]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Fürdő",
+							"száma:"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[4]/td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[5]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Építés éve"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[5]/td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2015",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[6]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Épület szintjei"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[6]/td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2",
+						"actual": {
+							"attribute": "innerText"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[7]/td[1]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Fűtés típusa"
+						]
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//tr[7]/td[2]"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "innerText"
+						},
+						"values": [
+							"Kandalló",
+							"cirkó"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "16/b",
+			"description": "A megfelelő osztályokat hozzáadta a táblázathoz",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table"
+					},
+					"assert": {
+						"operation": "contains",
+						"actual": {
+							"attribute": "class"
+						},
+						"values": [
+							"table-striped",
+							"m-auto"
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "16/c",
+			"description": "A táblázat szegélyezését beállította",
+			"points": 1,
+			"conditionsNumberHaveToPass": "13",
+			"conditions": [
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "dotted",
+						"actual": {
+							"cssValue": "border-bottom-style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "dotted",
+						"actual": {
+							"cssValue": "border-top-style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "dotted",
+						"actual": {
+							"cssValue": "border-left-style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "dotted",
+						"actual": {
+							"cssValue": "border-right-style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2px",
+						"actual": {
+							"cssValue": "border-bottom-width"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2px",
+						"actual": {
+							"cssValue": "border-top-width"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2px",
+						"actual": {
+							"cssValue": "border-left-width"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "2px",
+						"actual": {
+							"cssValue": "border-right-width"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-bottom-color"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-top-color"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-right-color"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//table//td[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "border-left-color"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "17/a",
+			"description": "A weboldal háttérszíne helyes",
+			"points": 1,
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//body"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//body"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//body"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(211, 243, 255, 1)",
+						"actual": {
+							"cssValue": "background-color"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//body"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(211, 243, 255, 1)",
+						"actual": {
+							"cssValue": "background-color"
+						}
+					}
+				}
+
+			]
+		},
+		{
+			"id": "17/b",
+			"description": "A bekezdések sorkizártak",
+			"points": 1,
+			"conditionsNumberHaveToPass": "4",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//p[1]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//p[2]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//p[1]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "justify",
+						"actual": {
+							"cssValue": "text-align"
+						}
+					}
+				},
+				{
+					"url": "haz01.html",
+					"element": {
+						"byXPath": "//p[2]"
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "justify",
+						"actual": {
+							"cssValue": "text-align"
+						}
+					}
+				}
+
+			]
+		},
+		{
+			"id": "17/c",
+			"description": ".gomb osztály esetén helyes a .hover beállítás",
+			"points": 1,
+			"conditionsNumberHaveToPass": "3",
+			"conditions": [
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[contains(@class, 'gomb')]",
+						"actionsBefore": [
+							{
+								"action": "moveToElement"
+							}
+						]
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(14, 78, 104, 1)",
+						"actual": {
+							"cssValue": "color"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[contains(@class, 'gomb')]",
+						"actionsBefore": [
+							{
+								"action": "moveToElement"
+							}
+						]
+					},
+					"assert": {
+						"operation": "equals",
+						"expected": "rgba(255, 255, 255, 1)",
+						"actual": {
+							"cssValue": "background-color"
+						}
+					}
+				},
+				{
+					"url": "index.html",
+					"element": {
+						"byXPath": "//a[contains(@class, 'gomb')]"
+					},
+					"assert": {
+						"operation": "isempty",
+						"actual": {
+							"attribute": "style"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": "18",
+			"description": "A HTML kód valid",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "index.html",
+					"assert": {
+						"operation": "htmlvalidation"
+					}
+				}
+			]
+		},
+		{
+			"id": "19",
+			"description": "A CSS kód valid",
+			"points": 1,
+			"conditionsNumberHaveToPass": "1",
+			"conditions": [
+				{
+					"url": "style.css",
+					"assert": {
+						"operation": "cssvalidation"
+					}
+				}
+			]
+		}
+	]
+}

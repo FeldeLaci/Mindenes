@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+    
+
+}
+
+
+.diva{
+    width: 200px;
+    height: 950px;
+    color: white;
+    float: left;
+    margin-right: 10px;
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    font-size: medium;
+}
+
+
+.pirostext{
+    color: red;
+}
+
+ul{
+    list-style-type: none;
+   
+ }
+
+
+.rubenkep{
+    float:left;
+    height: 150px;
+
+}
+
+
+.feherszoveg{
+    color: white;
+    float: right;
+    
+}
